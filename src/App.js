@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Routes } from "react-router-dom";
 import { Header } from './components/Header';
 import { ReviewsList } from './components/ReviewsList';
-import { DetailedReviewCard } from './components/DetailedReviewCard'
+import { DetailedReviewCard } from './components/DetailedReviewCard';
 
 function App() {
   return (
