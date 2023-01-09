@@ -4,8 +4,8 @@ import { getReviews } from "../apis"
 import { ReviewCard } from "./ReviewCard"
 
 export const ReviewsList = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [listOfReviews, setListOfReviews] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
+    const [listOfReviews, setListOfReviews] = useState([])
     useEffect(()=>{
         setIsLoading(true)
         getReviews().then((reviews)=>{
