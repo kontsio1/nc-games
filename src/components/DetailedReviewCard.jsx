@@ -28,8 +28,8 @@ export const DetailedReviewCard = ()=> {
             <img src={selectedReview.review_img_url} alt={`The game ${selectedReview.title}`} width="200" height="200"></img>
             <p> {selectedReview.review_body}</p>
             <p> Votes: {selectedReview.votes}</p><button>Vote</button>
-            <p> Cretated at {selectedReview.created_at}</p>
-            <button>View Comments</button>
+            <p> Created at {selectedReview.created_at}</p>
+            <a href={`/reviews/${selectedReview.review_id}/comments`}><button>View Comments</button></a>
         </section>
     )
 }
