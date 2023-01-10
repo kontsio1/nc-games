@@ -35,7 +35,7 @@ export const CommentList = () => {
            }
            </ul>
            <button>Add new comment</button>
-           <a href={`/reviews/${review_id}`}><button>Go back to review</button></a>
+           <Link to={`/reviews/${review_id}`}><button>Go back to review</button></Link>
         </section>
     )
 }

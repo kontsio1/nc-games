@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { getReview } from "../apis"
 
 export const DetailedReviewCard = ()=> {
@@ -29,7 +29,7 @@ export const DetailedReviewCard = ()=> {
             <p> {selectedReview.review_body}</p>
             <p> Votes: {selectedReview.votes}</p><button>Vote</button>
             <p> Created at {selectedReview.created_at}</p>
-            <a href={`/reviews/${selectedReview.review_id}/comments`}><button>View Comments</button></a>
+            <Link to={`/reviews/${selectedReview.review_id}/comments`}><button>View Comments</button></Link>
         </section>
     )
 }
