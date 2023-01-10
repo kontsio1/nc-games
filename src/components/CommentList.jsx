@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { getComments } from "../apis"
 import { CommentCard } from "./CommentCard"
 
@@ -15,7 +15,7 @@ export const CommentList = () => {
             setListOfComments(comments)
             setIsLoading(false)
         })
-    },[])
+    },[review_id])
 
     if (isLoading) {
         return (
@@ -35,7 +35,7 @@ export const CommentList = () => {
            }
            </ul>
            <button>Add new comment</button>
-           <a href={`/reviews/${review_id}`}><button>Go back to review</button></a>
+           <button onClick={()=>{window.scrollBy(0,-1000)}}>Go back to review</button>
         </section>
     )
 }
