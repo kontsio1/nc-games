@@ -10,6 +10,8 @@ export const DetailedReviewCard = ()=> {
     const [selectedReview, setSelectedReview] = useState({})
     const [hasVoted, setHasVoted] = useState(false)
     const [viewComments, setViewComments] = useState(false)
+    const [showButton, setShowButton] = useState(true)
+
     const {review_id} = useParams()
     useEffect(()=>{
         setIsLoading(true)
@@ -54,10 +56,12 @@ export const DetailedReviewCard = ()=> {
         <button onClick={()=>{voteThisReview(1)}}><img src={arrowUrls[0]} alt="Upvote" height={30} width={30}></img></button>
         <button onClick={()=>{voteThisReview(-1)}}><img src={arrowUrls[1]} alt="Downvote" height={30} width={30}></img></button>
         <p> Created at {selectedReview.created_at}</p>
+        { showButton && (
         <button onClick={()=>{
             setViewComments(true)
+            setShowButton(false)
             setTimeout(()=>{window.scrollBy(0,500)},500)
-            }}>View Comments...</button>
+            }}>View Comments...</button>)}
         <section> 
             {viewComments ? <CommentList/> :null}
         </section>
