@@ -1,11 +1,13 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { getReview } from "../apis"
+import { CommentList } from "./CommentList"
 
 export const DetailedReviewCard = ()=> {
     const [isLoading, setIsLoading] = useState(true)
     const [selectedReview, setSelectedReview] = useState({})
+    const [viewComments, setViewComments] = useState(false)
     const {review_id} = useParams()
     useEffect(()=>{
         setIsLoading(true)
@@ -29,7 +31,15 @@ export const DetailedReviewCard = ()=> {
             <p> {selectedReview.review_body}</p>
             <p> Votes: {selectedReview.votes}</p><button>Vote</button>
             <p> Created at {selectedReview.created_at}</p>
-            <Link to={`/reviews/${selectedReview.review_id}/comments`}><button>View Comments</button></Link>
+            <button onClick={()=>{
+                setViewComments(true)
+                setTimeout(()=>{window.scrollBy(0,500)},500)
+                }}>View Comments...</button>
+            <section> 
+                {viewComments ?
+                 <CommentList/>
+                :null}
+            </section>
         </section>
     )
 }

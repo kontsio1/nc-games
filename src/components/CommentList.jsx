@@ -35,7 +35,7 @@ export const CommentList = () => {
            }
            </ul>
            <button>Add new comment</button>
-           <Link to={`/reviews/${review_id}`}><button>Go back to review</button></Link>
+           <button onClick={()=>{window.scrollBy(0,-1000)}}>Go back to review</button>
         </section>
     )
 }
