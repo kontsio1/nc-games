@@ -15,7 +15,7 @@ export const CommentList = () => {
             setListOfComments(comments)
             setIsLoading(false)
         })
-    },[])
+    },[review_id])
 
     if (isLoading) {
         return (
