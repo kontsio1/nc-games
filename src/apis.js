@@ -16,7 +16,13 @@ export const getReview = (review_id)=>{
 
 export const getComments = (review_id)=>{
     return gamesApi.get(`/reviews/${review_id}/comments`).then((res)=>{
-        console.log(res.data.comments)
         return res.data.comments
+    })
+}
+
+export const patchReview = (review_id, inc_votes)=>{
+    return gamesApi.patch(`/reviews/${review_id}`, {inc_votes}).then((res)=>{
+        console.log(res.data.review)
+        return res.data.review
     })
 }
