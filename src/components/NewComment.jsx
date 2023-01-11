@@ -1,9 +1,7 @@
-import { useState } from "react"
 import { useParams } from "react-router"
 import { postComment } from "../apis"
 
-export const NewComment = ({listOfComments, setListOfComments, showNewCommentForm, setShowNewCommentForm}) => {
-    const [newComment,setNewComment] = useState({})
+export const NewComment = ({setListOfComments, showNewCommentForm, setShowNewCommentForm}) => {
     const {review_id} = useParams()
 
     const handleSubmit = (e)=>{
@@ -12,8 +10,7 @@ export const NewComment = ({listOfComments, setListOfComments, showNewCommentFor
             username: 'grumpy19',
             body: e.target[0].value
         }
-        setNewComment(newCommentObj)
-
+        
         setShowNewCommentForm(false)
         setListOfComments((currComments)=>{
             const newComments = [...currComments]
@@ -21,13 +18,13 @@ export const NewComment = ({listOfComments, setListOfComments, showNewCommentFor
             newComments.push({comment_id: tempCommentId, author: newCommentObj.username, body: newCommentObj.body})
             return newComments
         })
-        // postComment(review_id, newCommentObj)
-        // .catch((err)=>{
-        //     if(err) alert("error communicating with server try again later")
-        //     setListOfComments((currComments)=>{
-        //         return currComments.slice(0,-1)
-        //     })
-        // })
+        postComment(review_id, newCommentObj)
+        .catch((err)=>{
+            if(err) alert("error communicating with server try again later")
+            setListOfComments((currComments)=>{
+                return currComments.slice(0,-1)
+            })
+        })
     }
     if (showNewCommentForm) {
         return (

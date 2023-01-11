@@ -1,18 +1,29 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import { useLocation, useParams } from "react-router"
+import { useSearchParams } from "react-router-dom"
 import { getReviews } from "../apis"
+import { NavBar } from "./NavBar"
 import { ReviewCard } from "./ReviewCard"
 
 export const ReviewsList = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [listOfReviews, setListOfReviews] = useState([])
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const queryArr = searchParams.toString().split('=')
+    
     useEffect(()=>{
         setIsLoading(true)
-        getReviews().then((reviews)=>{
+        getReviews(queryArr[1]).then((reviews)=>{
             setListOfReviews(reviews)
             setIsLoading(false)
         })
     }, [])
+
+    // console.dir(searchParams.category, "<<location")
+
+    // setSearchParams({hello: 'kontsio'})
 
     if (isLoading) {
         return (
@@ -20,6 +31,8 @@ export const ReviewsList = () => {
         )
     }
     return (
+        <div>
+        <NavBar setListOfReviews={setListOfReviews} searchParams={searchParams} setSearchParams={setSearchParams}/>
         <section>
            <h2> Game Reviews </h2>
            <ul>
@@ -32,5 +45,6 @@ export const ReviewsList = () => {
            }
            </ul>
         </section>
+        </div>
     )
 }
