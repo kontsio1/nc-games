@@ -5,13 +5,14 @@ import { getReview, patchReview } from "../apis"
 import { CommentList } from "./CommentList"
 const {arrowUrls} = require('../img_sources')
 
+
 export const DetailedReviewCard = ()=> {
     const [isLoading, setIsLoading] = useState(true)
     const [selectedReview, setSelectedReview] = useState({})
     const [hasVoted, setHasVoted] = useState(false)
     const [viewComments, setViewComments] = useState(false)
     const [showButton, setShowButton] = useState(true)
-
+    
     const {review_id} = useParams()
     useEffect(()=>{
         setIsLoading(true)
@@ -44,7 +45,7 @@ export const DetailedReviewCard = ()=> {
         )
     }
     return(
-    <section>
+      <section>
         <h2> {selectedReview.title} </h2>
         <h3> Category: {selectedReview.category}</h3>
         <p> Designer: {selectedReview.designer}</p>
