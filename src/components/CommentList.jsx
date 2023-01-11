@@ -3,10 +3,12 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { getComments } from "../apis"
 import { CommentCard } from "./CommentCard"
+import { NewComment } from "./NewComment"
 
 export const CommentList = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [listOfComments, setListOfComments] = useState([])
+    const [showNewCommentForm, setShowNewCommentForm] = useState(false)
     const {review_id} = useParams()
 
     useEffect(()=>{
@@ -34,8 +36,13 @@ export const CommentList = () => {
             })
            }
            </ul>
-           <button>Add new comment</button>
-           <button onClick={()=>{window.scrollBy(0,-1000)}}>Go back to review</button>
+           {!showNewCommentForm &&
+                <button onClick={()=>{
+                    setShowNewCommentForm(true)
+               }}>Add new comment</button>
+           }
+           { showNewCommentForm && <NewComment listOfComments={listOfComments} setListOfComments={setListOfComments} showNewCommentForm={showNewCommentForm} setShowNewCommentForm={setShowNewCommentForm}/>}
+           <button onClick={()=>{window.scrollBy(0,-1000)}}>go back to top</button>
         </section>
     )
 }

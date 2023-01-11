@@ -11,6 +11,7 @@ export const DetailedReviewCard = ()=> {
     const [selectedReview, setSelectedReview] = useState({})
     const [hasVoted, setHasVoted] = useState(false)
     const [viewComments, setViewComments] = useState(false)
+    const [showButton, setShowButton] = useState(true)
     
     const {review_id} = useParams()
     useEffect(()=>{
@@ -37,7 +38,6 @@ export const DetailedReviewCard = ()=> {
             })
         }
     }
-        
 
     if(isLoading) {
         return (
