@@ -42,7 +42,7 @@ export const CommentList = () => {
                }}>Add new comment</button>
            }
            { showNewCommentForm && <NewComment listOfComments={listOfComments} setListOfComments={setListOfComments} showNewCommentForm={showNewCommentForm} setShowNewCommentForm={setShowNewCommentForm}/>}
-           <button onClick={()=>{window.scrollBy(0,-1000)}}>Go back to review</button>
+           <button onClick={()=>{window.scrollBy(0,-1000)}}>go back to top</button>
         </section>
     )
 }
