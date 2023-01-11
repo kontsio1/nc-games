@@ -21,13 +21,13 @@ export const NewComment = ({listOfComments, setListOfComments, showNewCommentFor
             newComments.push({comment_id: tempCommentId, author: newCommentObj.username, body: newCommentObj.body})
             return newComments
         })
-        // postComment(review_id, newCommentObj)
-        // .catch((err)=>{
-        //     if(err) alert("error communicating with server try again later")
-        //     setListOfComments((currComments)=>{
-        //         return currComments.slice(0,-1)
-        //     })
-        // })
+        postComment(review_id, newCommentObj)
+        .catch((err)=>{
+            if(err) alert("error communicating with server try again later")
+            setListOfComments((currComments)=>{
+                return currComments.slice(0,-1)
+            })
+        })
     }
     if (showNewCommentForm) {
         return (
