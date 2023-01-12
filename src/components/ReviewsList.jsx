@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { useLocation, useParams } from "react-router"
 import { useSearchParams } from "react-router-dom"
 import { getReviews } from "../apis"
 import { NavBar } from "./NavBar"
@@ -21,10 +20,6 @@ export const ReviewsList = () => {
         })
     }, [])
 
-    // console.dir(searchParams.category, "<<location")
-
-    // setSearchParams({hello: 'kontsio'})
-
     if (isLoading) {
         return (
             <p> Loading please wait...</p>
@@ -35,6 +30,7 @@ export const ReviewsList = () => {
         <NavBar setListOfReviews={setListOfReviews} searchParams={searchParams} setSearchParams={setSearchParams}/>
         <section>
            <h2> Game Reviews </h2>
+           <h3> {queryArr[1]} </h3>
            <ul>
            {
             listOfReviews.map(({review_id, title, owner, review_img_url, votes})=>{
