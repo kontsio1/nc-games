@@ -1,9 +1,7 @@
-import { useState } from "react"
 import { useParams } from "react-router"
 import { postComment } from "../apis"
 
-export const NewComment = ({listOfComments, setListOfComments, showNewCommentForm, setShowNewCommentForm}) => {
-    const [newComment,setNewComment] = useState({})
+export const NewComment = ({setListOfComments, showNewCommentForm, setShowNewCommentForm}) => {
     const {review_id} = useParams()
 
     const handleSubmit = (e)=>{
@@ -12,8 +10,7 @@ export const NewComment = ({listOfComments, setListOfComments, showNewCommentFor
             username: 'grumpy19',
             body: e.target[0].value
         }
-        setNewComment(newCommentObj)
-
+        
         setShowNewCommentForm(false)
         setListOfComments((currComments)=>{
             const newComments = [...currComments]
