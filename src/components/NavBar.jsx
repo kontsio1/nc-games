@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { getCategories, getReviews, getReviewsByCategory } from "../apis";
+import { getCategories} from "../apis";
 import '../App.css';
-import { ReviewsList } from "./ReviewsList";
 
 export const NavBar = ({setCategory, setSortBy, sortBy, setOrder, order}) => {
     const [reviewCategories, setReviewCategories] = useState([])
@@ -32,8 +31,8 @@ export const NavBar = ({setCategory, setSortBy, sortBy, setOrder, order}) => {
             </ul>
             </div>
         </div>
-        <label> Sort by: </label>
-        <select className="select-container" onChange={(e)=>{
+        <label className="select-container"> Sort by: </label>
+        <select className="select-container-btn" onChange={(e)=>{
             setSortBy(e.target.value)
             }} defaultValue={ sortBy }>
             <option value={'created_at'}> Date </option>
@@ -42,8 +41,8 @@ export const NavBar = ({setCategory, setSortBy, sortBy, setOrder, order}) => {
             <option value={'title'}> Title </option>
             <option value={'designer'}> Designer </option>
         </select>
-        <label> Order: </label>
-        <select className="order-container" onChange={(e)=>{
+        <label className="order-container"> Order: </label>
+        <select className="order-container-btn" onChange={(e)=>{
             setOrder(e.target.value)
         }} defaultValue={ order }>
             <option value={'asc'}> ascending </option>
