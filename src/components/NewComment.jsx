@@ -28,10 +28,10 @@ export const NewComment = ({setListOfComments, showNewCommentForm, setShowNewCom
     }
     if (showNewCommentForm) {
         return (
-            <form onSubmit={handleSubmit}>
+            <form className="comment-form" onSubmit={handleSubmit}>
                 <textarea required type="text" maxLength="400" name="body" rows="5" cols="33" placeholder="Write your comment here..."></textarea><br></br>
-                <input type="submit" value="Submit comment"></input>
-                <input type="reset" value="Clear"></input>
+                <input className="add-comment-button" type="submit" value="Submit comment"></input>
+                <input className="add-comment-button" type="reset" value="Clear"></input>
             </form>
         )
     }

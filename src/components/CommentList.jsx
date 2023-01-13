@@ -37,12 +37,12 @@ export const CommentList = () => {
            }
            </ul>
            {!showNewCommentForm &&
-                <button onClick={()=>{
+                <button className="add-comment-button" onClick={()=>{
                     setShowNewCommentForm(true)
                }}>Add new comment</button>
            }
            { showNewCommentForm && <NewComment listOfComments={listOfComments} setListOfComments={setListOfComments} showNewCommentForm={showNewCommentForm} setShowNewCommentForm={setShowNewCommentForm}/>}
-           <button onClick={()=>{window.scrollBy(0,-1000)}}>go back to top</button>
+           <button className="add-comment-button" onClick={()=>{window.scrollBy(0,-10000)}}>go back to top</button>
         </section>
     )
 }
