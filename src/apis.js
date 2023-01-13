@@ -30,8 +30,8 @@ export const getCategories = ()=>{
     })
 }
 
-export const getReviews = (selectedType)=>{
-    return gamesApi.get('/reviews', {params: {category: selectedType }}).then((res)=>{
+export const getReviews = (selectedType, sortType = 'created_at', sortOrder='desc')=>{
+    return gamesApi.get('/reviews', {params: {category: selectedType, sort_by: sortType , order: sortOrder}}).then((res)=>{
         return res.data.reviews
     })
 }
