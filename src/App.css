@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #ab8b7c;
+  background-color: #736ea5;
 }
 
 .dropbtn {
@@ -123,13 +123,13 @@ a:any-link {
   background-color: #ffffff;
   margin: auto;
   border-style: solid;
-  border-width: 1px;
+  border-width: 3px;
   border-color: #000000;
 }
 .detailed-review {
   margin-left: auto;
   margin-right: auto;
-  border-width: 1px;
+  border-width: 2px;
   border-color: #000000;
   border-style: solid;
   background-color: #ffffff;
@@ -138,7 +138,7 @@ a:any-link {
 .detailed-review-votes {
   margin-left: auto;
   margin-right: auto;
-  border-width: 1px;
+  border-width: 2px;
   border-color: #000000;
   border-style: solid;
   background-color: #ffffff;
@@ -146,7 +146,9 @@ a:any-link {
 }
 .detailed-review-body {
   background-color: #ffffff;
-  border-width: 1px;
+  border-width: 2px;
+  margin: auto;
+  max-width: 800px;
   border-color: #000000;
   border-style: solid;
 }
