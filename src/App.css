@@ -1,14 +1,6 @@
 .App {
   text-align: center;
-  background-color: #d06027;
-}
-
-.nav-bar {
-  display: inline-block;
-  background-color: #000000;
-  /* padding: 3px; */
-	/* margin: 0 auto; */
-  z-index: -1;
+  background-color: #ab8b7c;
 }
 
 .dropbtn {
@@ -35,9 +27,19 @@
   box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0);
   z-index: 1;
 }
+.header {
+  text-align: center;
+}
 
 ul li {
   list-style-type: none;
+}
+.review-cards-ul {
+  text-align: center;
+}
+.cards-ul {
+  display: inline-block;
+  text-align: center;
 }
 
 .options {
@@ -97,11 +99,11 @@ ul li {
   background-color: #61250a ;
   color: rgb(255, 255, 255);
 }
-
 .review-card {
   border-style: solid;
   border-width: 5px;
   border-color: #000000;
+  max-width: 400px;
   background-color: #ffffff;
   margin: 10px 0;
 }
@@ -109,4 +111,72 @@ ul li {
 a:any-link {
   text-decoration: none;
   color: #000000;
+}
+
+.Detailed-Review-card {
+  text-align: center;
+  display: block;
+}
+
+ .detailed-review-title {
+  max-width: 700px;
+  background-color: #ffffff;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000000;
+}
+.detailed-review {
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  background-color: #ffffff;
+  max-width: 300px;
+}
+.detailed-review-votes {
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  background-color: #ffffff;
+  max-width: 100px;
+}
+.detailed-review-body {
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+}
+
+.comments {
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+}
+
+.add-comment-button {
+  background-color: #5c5c5c;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.vote-comment-button {
+  background-color: #5c5c5c;
+  border: none;
+  color: white;
+  padding: 5px 10px;
 }
