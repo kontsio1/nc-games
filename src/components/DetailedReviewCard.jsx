@@ -6,6 +6,7 @@ import { CommentList } from "./CommentList"
 import { ErrorPage } from "./ErrorPage"
 const {arrowUrls} = require('../img_sources')
 
+
 export const DetailedReviewCard = ()=> {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -13,7 +14,7 @@ export const DetailedReviewCard = ()=> {
     const [hasVoted, setHasVoted] = useState(false)
     const [viewComments, setViewComments] = useState(false)
     const [showButton, setShowButton] = useState(true)
-
+    
     const {review_id} = useParams()
     useEffect(()=>{
         setIsLoading(true)
