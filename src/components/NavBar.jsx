@@ -35,7 +35,7 @@ export const NavBar = ({setCategory, setSortBy, sortBy, setOrder, order}) => {
         <select className="select-container-btn" onChange={(e)=>{
             setSortBy(e.target.value)
             }} defaultValue={ sortBy }>
-            <option value={'created_at'}> Date </option>
+            <option className='options' value={'created_at'}> Date </option>
             <option value={'owner'}> Owner </option>
             <option value={'votes'}> Votes </option>
             <option value={'title'}> Title </option>

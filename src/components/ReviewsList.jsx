@@ -9,7 +9,7 @@ export const ReviewsList = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [listOfReviews, setListOfReviews] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
-    const [category, setCategory] = useState(searchParams.get('category'))
+    const [category, setCategory] = useState(searchParams.get('category')|| '')
     const [sortBy, setSortBy] = useState(searchParams.get('sort_by')|| 'created_at')
     const [order, setOrder]= useState(searchParams.get('order')||'desc')
 

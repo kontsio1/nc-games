@@ -1,18 +1,18 @@
 .App {
   text-align: center;
-  background-color: #F9EDCC;
+  background-color: #d06027;
 }
 
 .nav-bar {
   display: inline-block;
-  background-color: #ce370e;
+  background-color: #000000;
   /* padding: 3px; */
 	/* margin: 0 auto; */
   z-index: -1;
 }
 
 .dropbtn {
-  background-color: #61210F;
+  background-color: #000000;
   color: rgb(255, 255, 255);
   padding: 16px;
   font-size: 16px;
@@ -30,7 +30,7 @@
   display: none;
   position: absolute;
   right: 0;
-  background-color:#61210F;
+  background-color:#000000;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0);
   z-index: 1;
@@ -40,28 +40,31 @@ ul li {
   list-style-type: none;
 }
 
+.options {
+  color: #ffffff;
+}
 .select-container {
-  background-color: #61210F;
+  background-color: #000000;
   color: rgb(255, 255, 255);
   font-size: 16px;
 }
 
 .select-container-btn {
-  background-color: #61210F ;
+  background-color: #ffffff ;
 }
 
 .order-container-btn {
-  background-color: #61210F ;
+  background-color: #ffffff  ;
 }
 
 .order-container {
-  background-color: #61210F;
+  background-color: #000000 ;
   color: rgb(255, 255, 255);
   font-size: 16px;
 }
 
 .nav-bar {
-  background-color: #61210F;
+  background-color: #000000 ;
 }
 
 .dropdown-content a {
@@ -72,7 +75,7 @@ ul li {
 }
 
 .categories {
-  background-color: #61210F;
+  background-color: #000000 ;
   color: #ffffff;
   padding: 16px;
   font-size: 16px;
@@ -82,8 +85,8 @@ ul li {
 
 .dropdown-content a:hover {background-color: #f1f1f1;}
 .dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: #61210F}
-.categories:active {background-color: #61210F;}
+.dropdown:hover .dropbtn {background-color: #000000 }
+.categories:active {background-color: #000000 ;}
 
 .hidden-description {
   display: none;
@@ -91,13 +94,19 @@ ul li {
 }
 .categories:hover + .hidden-description {
   display: inline-block;
-  background-color: #61210F;
+  background-color: #61250a ;
   color: rgb(255, 255, 255);
 }
 
 .review-card {
   border-style: solid;
   border-width: 5px;
-  border-color: #61210F;
+  border-color: #000000;
+  background-color: #ffffff;
   margin: 10px 0;
+}
+
+a:any-link {
+  text-decoration: none;
+  color: #000000;
 }
